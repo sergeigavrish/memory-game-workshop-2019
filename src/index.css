@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: darkblue;
+}
+
+.memory-game {
+    width: 480px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.card {
+    width: calc(25% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    border-radius: 5px;
+    position: relative;
+    background-color: royalblue;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .2s;
+}
+
+.card:active {
+    transform: scale(.97);
+}
+
+.card_flipped {
+    transform: rotateY(180deg);
+
+}
+
+.card__front,
+.card__back {
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card__front {
+    transform: rotateY(180deg);
+}
+
+.timer {
+    margin: 0 auto;
+}
+
+.timer__time {
+    font-size: 100px;
+    color: white;
+}
